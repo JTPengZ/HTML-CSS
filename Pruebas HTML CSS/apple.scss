@@ -1,0 +1,133 @@
+//Constants COLORS
+$colorBlack : black;
+$colorWhite : white;
+$colorLightGrey : lightGrey;
+$colorGrey : grey;
+$colorBlue : blue;
+$colorRed : red;
+
+//Constants PLATFORMS
+$layout_max_height_tablet : 450px;
+$layout_max_height_desktop : 1000px;
+
+//Constants PADDINGS
+$padding_s : 10px;
+$padding_m : 20px;
+$padding_l : 30px;
+
+//Compatible on Mobile Tablet and Desktop
+@mixin tablet {
+  @media only screen and (min-width: #{$layout_max_height_tablet}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: #{$layout_max_height_desktop}) {
+    @content;
+  }
+}
+
+
+//Beginning CSS
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  width: 100%;
+  background-color: $colorGrey;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0; 
+
+  &__content-principal {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  i{
+    color: $colorLightGrey;
+  }
+
+  i:hover{
+    color: $colorWhite;
+  }
+
+  .fa-search{
+    padding-right: $padding_s;
+
+    @include tablet {
+      padding-right: $padding_m;
+    }
+    @include desktop {
+      padding-right: $padding_l;
+    }
+  }
+  .fa-shopping-bag{
+    padding-left: $padding_s;
+
+    @include tablet {
+      padding-left: $padding_m;
+    }
+
+    @include desktop {
+      padding-left: $padding_l;
+    }
+  }
+  
+  &__content-before, &__content-secondary {
+    display: flex;
+    font-size: 24px;
+    padding-left: $padding_s;
+    padding-right: $padding_s;
+      @include tablet {
+        font-size: 36px;
+        padding-left: $padding_m;
+        padding-right: $padding_m;
+      }
+    
+      @include desktop {
+        font-size: 48px;
+        padding-left: $padding_l;
+        padding-right: $padding_l;
+      }
+  }
+
+  &__content-primary {
+    width: 100%;
+  }
+
+  &__list-item{
+    color: $colorLightGrey;
+    text-decoration:none;
+  }
+
+  &__list-item:hover{
+    color: $colorWhite;
+  }
+
+  &__list{
+    height: 50px;
+    margin: 0;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style-type: none;
+    font-size: 0.75em;
+
+    @include tablet {
+      height: 75px;
+      font-size: 1.5em;
+    }
+  
+    @include desktop {
+      height: 100px;
+      font-size: 2em;
+    }
+  }
+}
