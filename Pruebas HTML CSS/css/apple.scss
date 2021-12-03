@@ -1,14 +1,20 @@
 //COLORS
 $colorBlack : black;
 $colorWhite : white;
+$colorLighterGrey : rgb(235,235,235);
 $colorLightGrey : lightGrey;
+$colorMidGrey : rgb(161,161,161);
 $colorGrey : grey;
+$colorLightBlue : lightBlue;
 $colorBlue : blue;
 $colorRed : red;
 
 //PLATFORMS
-$layout_max_height_tablet : 450px;
-$layout_max_height_desktop : 1000px;
+$layout_max_height_tablet : 600px;
+$layout_max_height_desktop : 1100px;
+
+//Height content
+$height_content : 500px;
 
 //PADDINGS
 $padding_s : 10px;
@@ -18,13 +24,19 @@ $padding_l : 30px;
 //ZERO
 $zero : 0;
 
+//FIVE px
+$five : 5px;
+
 //Multiply SIZE
 $multiply_xs : 0.75em;
-$multiply_s : 1em;
-$multiply_m : 1.5em;
+$multiply_s : 0.9em;
+$multiply_m : 1.25em;
 $multiply_l : 2em;
 
 //Font SIZE in px
+$font_xxxs : 8px;
+$font_xxs : 12px;
+$font_xs : 16px;
 $font_s : 24px;
 $font_m : 36px;
 $font_l : 48px;
@@ -57,6 +69,7 @@ body { //No margins or padding on the body
   position: -webkit-sticky;
   position: sticky;
   top: $zero; 
+  z-index: 3;
 
   .nav {
     display: flex;
@@ -159,5 +172,242 @@ body { //No margins or padding on the body
       padding-left: $padding_l;
     }
   }
+}
+
+.section {
+  text-align: center;
+  &__p {
+    font-size: $font_xxs;
   
+    @include tablet {
+      font-size: $font_xs;
+    }
+  
+    @include desktop {
+      font-size: $font_s;
+    }
+  }
+  &__link{
+    z-index: 1;
+    text-decoration: none;
+  }
+  
+  &--relative{
+    position: relative;
+  }
+
+  &--aboslute{
+    position: absolute;
+  }
+
+  &__content {
+    width: 100%;
+    height: $height_content;
+
+    &--black{
+      background-color: black;
+    }
+
+    &--white{
+      background-color: white;
+    }
+
+    &-flex{
+      width: 60%;
+      display: flex;
+      justify-content: space-around;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: $five;
+      margin-bottom: $five;
+    }
+  }
+
+  &__content2{
+    padding-top: 15px;
+  }
+
+  &__image {
+    width: auto;
+    height: 300px;
+  }
+
+  &__text{
+    margin : $zero;
+    padding: $five;
+
+    &--verybig{
+      font-size: $font_xs;
+
+      @include tablet {
+        font-size: $font_s;
+      }
+    
+      @include desktop {
+        font-size: $font_m;
+      }
+    }
+
+    &--medium{
+      font-size: $font_xxxs;
+
+      @include tablet {
+        font-size: $font_xxs;
+      }
+    
+      @include desktop {
+        font-size: $font_xs;
+      }
+    }
+
+    &--big{
+      font-size: $font_xxs;
+      
+      @include tablet {
+        font-size: $font_xs;
+      }
+    
+      @include desktop {
+        font-size: $font_s;
+      }
+    }
+
+    &--grey{
+      color:$colorGrey;
+    }
+
+    &--midgrey{
+      color:$colorMidGrey;
+    }
+
+    &--lightgrey{
+      color:$colorLightGrey;
+    }
+  }
+
+  &__link{
+    text-decoration: none;
+  }
+
+  &__item{
+    text-decoration: none;
+    &--blue{
+      color: $colorBlue;
+    }
+
+    &--hover:hover{
+      text-decoration: underline;
+    }
+  }
+}
+
+/*.gridsection{
+  @include tablet {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+  }
+
+  @include desktop {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+  }
+}*/
+
+.flexsection{
+  display: flex;
+  flex-wrap: wrap;
+
+  &__50{
+    width: 100%;
+    @include tablet {
+      width: 50%;
+    }
+    @include desktop {
+      width: 50%;
+    }
+  }
+  
+}
+
+.footer{
+  background-color: $colorLighterGrey;
+
+  &__section {
+    margin: $five;
+    padding : $five;
+  }
+
+  &__p {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    color: $colorGrey;
+    text-align: center;
+
+    &--small{
+      font-size: $font_xxxs;
+
+      @include tablet {
+        font-size: $font_xxs;
+      }
+    
+      @include desktop {
+        font-size: $font_xs;
+      }
+    }
+  }
+
+  &__link{
+    text-decoration:none;
+
+    &--grey{
+      color: $colorGrey;
+    }
+
+    &--grey:hover{
+      text-decoration: underline;
+    }
+  }
+
+  &__ullist{
+    margin: $zero;
+    padding: $zero $padding_s;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style-type: none;
+    font-size: $font_xxxs;
+
+    @include tablet {
+      font-size: $font_xxs;
+    }
+  
+    @include desktop {
+      font-size: $font_xs;
+    }
+  }
+}
+
+.link{
+  height: $height_content;
+  z-index: 1;
+  position: absolute;
+  &--50{
+    width: 100%;
+
+    @include tablet {
+      width: 50%;
+    }
+  
+    @include desktop {
+      width: 50%;
+    }
+  }
+  &--100{
+    width: 100%;
+  }
 }
