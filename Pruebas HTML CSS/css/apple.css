@@ -1,0 +1,149 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  width: 100%;
+  background-color: grey;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.header .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header .nav__link {
+  text-decoration: none;
+}
+
+.header .nav__link--white {
+  color: lightGrey;
+}
+
+.header .nav__link--white:hover {
+  color: white;
+}
+
+.header .nav__item--white {
+  color: lightGrey;
+}
+
+.header .nav__item--white:hover {
+  color: white;
+}
+
+.header .nav__content-before, .header .nav__content-secondary {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 24px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+@media only screen and (min-width: 450px) {
+  .header .nav__content-before, .header .nav__content-secondary {
+    font-size: 36px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .header .nav__content-before, .header .nav__content-secondary {
+    font-size: 48px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+.header .nav__content-primary {
+  width: 100%;
+}
+
+.header .nav__list-item {
+  color: lightGrey;
+  text-decoration: none;
+}
+
+.header .nav__list-item:hover {
+  color: white;
+}
+
+.header .nav__ullist {
+  height: 50px;
+  margin: 0;
+  padding: 0 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  list-style-type: none;
+  font-size: 0.75em;
+}
+
+@media only screen and (min-width: 450px) {
+  .header .nav__ullist {
+    height: 75px;
+    font-size: 1.5em;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .header .nav__ullist {
+    height: 100px;
+    font-size: 2em;
+  }
+}
+
+.header .fa-search {
+  padding-right: 10px;
+}
+
+@media only screen and (min-width: 450px) {
+  .header .fa-search {
+    padding-right: 20px;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .header .fa-search {
+    padding-right: 30px;
+  }
+}
+
+.header .fa-shopping-bag {
+  padding-left: 10px;
+}
+
+@media only screen and (min-width: 450px) {
+  .header .fa-shopping-bag {
+    padding-left: 20px;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .header .fa-shopping-bag {
+    padding-left: 30px;
+  }
+}
+/*# sourceMappingURL=apple.css.map */
